@@ -86,3 +86,33 @@ let Batch = "MCA(2023 - 2025)";
 console.log(`My name is ${myName} , age is ${age} , city in ${city} , roll number is ${roll_no} in the college ${College} and batch ${Batch}`);
 
 
+
+
+
+// String Manipulation
+// To check the length of the string
+console.log(myName.length);
+
+// To Replace
+let my_website = "bhagya29@gmail.com";
+console.log(my_website.replace("jinu"));
+
+
+let regd_no = " regd_no2305274023 "
+console.log(regd_no.length-2);
+
+
+
+
+
+// Coercion (concatination)
+let num1 = 100;
+let num2 = "100";
+
+console.log(num1 + num2);
+
+
+
+
+
+
