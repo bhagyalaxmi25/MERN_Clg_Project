@@ -62,9 +62,9 @@ console.log("Task 5:-->");
 // Task 5:
 // Print Week of the day
 
-let week = 1;
+let day = 1;
 
-switch (week) {
+switch (day) {
   case 1:
     console.log("Sunday");
   case 2:
