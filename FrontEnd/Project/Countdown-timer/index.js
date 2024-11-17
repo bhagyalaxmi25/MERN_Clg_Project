@@ -1,6 +1,7 @@
 let timer;
 let timeInput;
 let timeOutput = document.getElementById("timeOutput");
+let timeOut;
 
 function setTime() {
   let timeInput = document.getElementById("timeInput");
@@ -19,4 +20,8 @@ function setTime() {
     }
     time--;
   }, 1000);
+  let timeOut = () => {
+    clearInterval(timer);
+    input.value = time;
+  };
 }
