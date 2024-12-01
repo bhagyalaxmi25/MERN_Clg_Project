@@ -1,0 +1,49 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  font-family: "Sour Gummy", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signUpForm {
+  width: 500px;
+  border: 5px solid plum;
+  border-radius: 20px;
+  background-color: rgb(1, 121, 121);
+  box-shadow: 10px 5px 5px 5px plum;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: auto;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.signUpForm input {
+  max-width: 300px;
+  margin-top: 5px;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  border: 2px solid black;
+}
+
+.signUpForm button {
+  max-width: 100px;
+  margin-top: 20px;
+  padding: 10px 0;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.signUpForm button:hover {
+  background-color: palevioletred;
+  cursor: pointer;
+}
