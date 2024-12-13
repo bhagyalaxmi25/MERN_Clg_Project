@@ -76,26 +76,20 @@ function logOut() {
   showView("signUp");
 }
 
-let currentSlide = 0;
-function showSlide(index) {
-  const imgs = document.querySelectorAll(".img");
-  if (index >= imgs.length) {
-    currentSlide = 0;
-  } else if (index < 0) {
-    currentSlide = imgs.length - 1;
-  } else {
-    currentSlide = index;
+let currentIndex = 0;
+
+function moveSlide(direction) {
+  const carousel = document.querySelector('.carousel');
+  const slides = document.querySelectorAll('.carousel img');
+  const totalSlides = slides.length;
+
+  currentIndex += direction;
+
+  if (currentIndex < 0) {
+    currentIndex = totalSlides - 1;
+  } else if (currentIndex >= totalSlides) {
+    currentIndex = 0;
   }
-  imgs.forEach((img, i) => {
-    img.classList.toggle("active", i === currentSlide);
-  });
+
+  carousel.style.transform = `translateX(-${currentIndex*100}%)`;
 }
-function changeImg(step) {
-  showSlide(currentSlide + step);
-}
-document.addEventListener("DOMContentLoaded", () => {
-  showSlide(currentSlide);
-});
-setInterval(() => {
-  changeImg(1);
-}, 3000);

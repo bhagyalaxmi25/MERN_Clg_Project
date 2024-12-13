@@ -2,6 +2,15 @@
   margin: 0px;
   padding: 0px;
 }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
 #para {
   background-color: black;
   color: aliceblue;
@@ -137,30 +146,51 @@ h1 {
   cursor: pointer;
 }
 
-.carousel {
-  width: 600px;
-  min-height: 500px;
+/* Carousel Container */
+.carousel-container {
+  display: flex;
   position: relative;
+  width: 80%;
+  max-width: 600px;
   overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
 }
-.img {
+
+/* Carousel */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Slide */
+.carousel img {
   width: 100%;
-  height: 100%;
+  flex-shrink: 0;
+}
+
+/* Navigation Buttons */
+button {
   position: absolute;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
 }
-.img.active {
-  opacity: 1;
-  z-index: 1;
+
+.prev {
+  left: 10px;
 }
-.img .img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+.next {
+  right: 10px;
 }
-.content {
-  position: absolute;
-  bottom: 20px;
-left: 20px;
+
+button:hover {
+  background: rgba(0, 0, 0, 0.7);
 }

@@ -1,27 +1,24 @@
 let timer;
 let timeInput;
 let timeOutput = document.getElementById("timeOutput");
-let timeOut;
+let time;
+timeInput = document.getElementById("timeInput");
 
 function setTime() {
-  let timeInput = document.getElementById("timeInput");
-  let time = parseInt(timeInput.value);
-
+  time = parseInt(timeInput.value);
   timer = setInterval(() => {
     if (time > 0) {
-      const minutes = Math.floor(time / 60);
-      const seconds = time % 60;
-      timer.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-
-      timeOutput.innerHTML = time;
+      const minute = (Math.floor(time / 60) < 10 ? "0" + Math.floor(time / 60) : Math.floor(time / 60));
+      const second = (time % 60) < 10 ? "0" + time % 60 : time % 60;
+      timeOutput.innerHTML = `${minute} : ${second}`;
     } else {
       timeOutput.innerHTML = "Time's Up";
       clearInterval(timer);
     }
     time--;
   }, 1000);
-  let timeOut = () => {
-    clearInterval(timer);
-    input.value = time;
-  };
 }
+let timeOut = () => {
+  clearInterval(timer);
+  timeInput.value = time;
+};
